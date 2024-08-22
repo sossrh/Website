@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<link rel="shortcut icon" href="{% static '/static/shopping-cart-icon.png' %}">
+
+    <title>Threesome Delights</title>
+</head>
+<body>
+
+{% block Header %}
+
+<nav>
+    <div class="menu">
+        <div class="logo">
+            {% if user.is_authenticated %}
+                <a href="{% url "home" %}">Threesome Delights</a>
+            {% else %}
+                <a href="#">Threesome Delights</a>
+            {% endif %}
+        </div>
+        <ul>
+            <li><a href="{% url "home" %}">Home</a></li>
+            <li><a href="{% url "about" %}">About</a></li>
+            {% comment %} <li><a href="{% url "services" %}">Menu</a></li> {% endcomment %}
+            <li><a href="{% url "cuisines" %}">Cuisines</a></li>
+            <li><a href="{% url "feedback" %}">Feedback</a></li>
+            <li><a href="{% url "contact_us" %}">Contact</a></li>
+            <li><a href="{% url "cart" %}">Cart</a></li>
+            {% if user.is_authenticated and user.is_superuser %}
+            <li><a href="{% url "insert_product" %}">Insert Products</a></li>
+            {% endif %}
+            {% comment %} <li><a href="{% url 'view_cart' %}">Cart</a></li> {% endcomment %}
+            {% if user.is_authenticated%}
+                <li><a href="{% url "logout_user" %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url "login_user" %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+{% endblock Header %}
+
+
+         
+</body>
+</html>

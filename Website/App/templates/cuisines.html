@@ -1,0 +1,129 @@
+{% load static %}
+{% include "Header.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuisines - Threesome Delights</title>
+    <link rel="stylesheet" href="{% static '/css/services.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static '/css/cuisines.css' %}">
+
+</head>
+
+<body style="background-color: #000000;">
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+        <div class="col">
+          <div class="card h-75">
+            <a href="{% url 'sandwich' %}">
+            <img src="{% static '/img/sandwich1.webp' %}" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+            </a>
+            <div class="card-body rounded-bottom">
+              <h5 class="card-title text-center">Sandwich</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-75">
+            <a href="{% url 'southindian' %}">
+            <img src="{% static '/img/southindian.webp' %}" class="card-img-top" alt="Palm Springs Road"/>
+            </a>
+            <div class="card-body rounded-bottom">
+              <h5 class="card-title text-center">South Indian</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-75">
+            <a href="{% url 'pizza' %}">
+            <img src="{% static '/img/pizza.webp' %}" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+           </a>
+            <div class="card-body rounded-bottom">
+              <h5 class="card-title text-center">Pizza</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-75">
+            <a href="{% url 'burger' %}">
+            <img src="{% static '/img/burger.webp' %}" class="card-img-top" alt="Skyscrapers"/>
+            </a>
+            <div class="card-body rounded-bottom">
+              <h5 class="card-title text-center">Burgers</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card h-75">
+              <a href="{% url 'roll' %}">
+              <img src="{% static '/img/roll.webp' %}" class="card-img-top" alt="Palm Springs Road"/>
+              </a>
+              <div class="card-body rounded-bottom">
+                <h5 class="card-title text-center">Rolls</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-75">
+              <a href="{% url 'fingerfood' %}">
+              <img src="{% static '/img/finfood.webp' %}" class="card-img-top" alt="Palm Springs Road"/>
+             </a>
+              <div class="card-body rounded-bottom">
+                <h5 class="card-title text-center">Finger Foods</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-75">
+              <a href="{% url 'soups' %}">
+              <img src="{% static '/img/soup.webp' %}" class="card-img-top" alt="Palm Springs Road"/>
+              </a>
+              <div class="card-body rounded-bottom">
+                <h5 class="card-title text-center">Soups</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-75">
+              <a href="{% url 'beverage' %}">
+              <img src="{% static '/img/juice.webp' %}" class="card-img-top" alt="Palm Springs Road"/>
+              </a>
+              <div class="card-body rounded-bottom">
+                <h5 class="card-title text-center">Beverages</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-75">
+              <a href="{% url 'dessert' %}">
+              <img src="{% static '/img/dessert.webp' %}" class="card-img-top" alt="Palm Springs Road"/>
+              </a>
+              <div class="card-body rounded-bottom">
+                <h5 class="card-title text-center">Desserts</h5>
+              </div>
+            </div>
+          </div>
+        <div class="col">
+            <div class="card h-75">
+              <a href="{% url 'sauce' %}">
+              <img src="{% static '/img/sauce.webp' %}" class="card-img-top" alt="Skyscrapers"/>
+             </a>
+              <div class="card-body rounded-bottom">
+                <h5 class="card-title text-center">Sauces</h5>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+</body>
+
+</html>

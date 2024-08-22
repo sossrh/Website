@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{% static '/css/cart.css' %}">
+</head>
+<body>
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        {% for item in cart %}
+            <div class="cart-item">
+                
+                <div class="item-image">
+                    <img src="{{ item.image }}" alt="{{ item.name }}">
+                </div>
+                <div class="item-details">
+                    <h3>{{ item.name }}</h3>
+                </div>
+                <div class="item-actions">
+                    <button class="add-button" onclick="add('{{ item.name }}')">+</button>&nbsp;&nbsp;&nbsp;
+                    {{ item.quantity }} 
+                    &nbsp;&nbsp;&nbsp;<button class="remove-button" onclick="remove('{{ item.name }}')">-</button>
+                </div>
+                
+                <p>Price: {{ item.price }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="total-cost">
+        Total Cost: {{ total }}
+    </div>
+    <a href="/checkout" class="checkout-button">Checkout</a>
+    <script>
+        async function remove(item) {
+            let form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/cart';
+            let input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'item';
+            input.value = item;
+            form.appendChild(input);
+            let input2 = document.createElement('input');
+            input2.type = 'hidden';
+            input2.name = 'action';
+            input2.value = 'remove';
+            form.appendChild(input2);
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        async function add(item) {
+            let form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/cart';
+            let input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'item';
+            input.value = item;
+            form.appendChild(input);
+            let input2 = document.createElement('input');
+            input2.type = 'hidden';
+            input2.name = 'action';
+            input2.value = 'add';
+            form.appendChild(input2);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+/* Define CSS Variables (Custom Properties) for Session */
+:root {
+    --background-image: url('/static/img/Background.jpg');
+  }
+  
+
+  .section-session {
+    background: linear-gradient(var(--color-background), var(--color-background)), var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+
+  
+  /* Section Styles */
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    padding: 10px;
+    color: var(--color-white); /* Text color on dark background */
+  }
+  
+  /* Section Alignment Styles */
+  .section-left {
+    flex-direction: row-reverse;
+  }
+  
+  /* Section Tag Styles */
+  .sectionTag {
+    padding: 16px 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Section Subtag Styles */
+  .sectionSubTag {
+    font-family: var(--font-segoe);
+    font-size: 1rem;
+    margin-right: 40px; /* Add margin to create space below the text */
+  }
+  /* Section Subtag Styles within .section-left */
+  .section-left .sectionSubTag {
+    font-family: var(--font-segoe);
+    font-size: 1rem;
+    margin-left: 40px; /* Add margin to create space on the left */
+  }
+  /* Section Tag Styles within .section-left */
+ .section-left .sectionTag {
+    padding: 16px 0;
+    font-size: 2.5rem;
+    margin-left: 40px; /* Add margin to create space on the right */
+  }
+  
+  
+  
+  /* Text Styles */
+  .text-Big {
+    font-size: 2.4375rem;
+  }
+  
+  .text-Small {
+    font-size: 1rem;
+  }
+  
+  /* Thumbnail Image Styles */
+  .thumbnail img {
+    width: 250px;
+    border: 2px solid var(--color-black);
+    border-radius: 26px;
+    margin-top: 19px;
+  }
+  
+  /* Footer Styles */
+  .text-footer {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--color-white);
+    background-color: var(--color-background);
+  }
